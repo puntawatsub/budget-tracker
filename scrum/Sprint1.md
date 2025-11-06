@@ -160,8 +160,8 @@ Tasks were distributed as per member expertise using Trello.
 To reflect on what went well, what didn’t, and what can be improved for the next sprint.
 
 **Outcome:**  
-What went well: Team communication and task division.
-What could improve: Better time scheduling.
+What went well: Team communication and task division. <br />
+What could improve: Better time scheduling.<br />
 Action for next sprint: Assign deadlines per task and review mid-week.
 
 ## Team Contributions (Sprint 1)
