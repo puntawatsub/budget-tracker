@@ -147,7 +147,7 @@ To define what features and deliverables we’ll complete during Sprint 1 and ho
 
 - Create the **low-fidelity Figma prototype**
 - Build the **Product Backlog** in Trello
-- Prepare **Block Diagram (Draw.io)**
+- Prepare **Block Diagram**
 - Write the **Project Description** and **Scrum Documentation**
 
 **Approach:**  
