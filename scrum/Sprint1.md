@@ -9,6 +9,10 @@
 - Puntawat Subhamani
 - Swostika Lama
 
+### Presentation slide
+
+[sprint1_presentation.pdf](./resources/sprint1_presentation.pdf)
+
 ## Contents
 
 1.  [Low-fidelity prototype](#1-low-fidelity-prototype)
