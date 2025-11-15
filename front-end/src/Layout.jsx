@@ -10,7 +10,7 @@ const Layout = () => {
             Login
           </Link>
           <div className="h-6 w-px bg-gray-300"></div>
-          <Link to="/signup" className="bg-green-700 text-white px-4 py-2 rounded-md hover:bg-green-800 transition">
+          <Link to="/signup" className=" text-black px-4 py-2 rounded-md hover:bg-green-800 transition">
             Sign up
           </Link>
         </div>

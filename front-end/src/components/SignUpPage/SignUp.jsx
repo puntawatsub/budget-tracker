@@ -25,10 +25,13 @@ const SignUp = () => {
   };
 
   return (
-    <div className="flex w-full h-screen">
-      <div className="w-full flex items-center justify-center lg:w-full">
-        <h2 className="text-2xl font-bold mb-6 text-center">Sign Up</h2>
-        <form onSubmit={handleSubmit} className="space-y-4">
+    <div className="px-10 py-20 rounded-3xl border-2 border-gray-200 flex items-center justify-center min-h-screen">
+      <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+
+        <h2 className="text-5xl font-semibold mb-6 text-center">Sign Up</h2>
+
+        <form onSubmit={handleSubmit} className="space-y-6">
+
           {['username', 'email', 'password', 'confirmPassword'].map((field) => (
             <label key={field} className="block text-sm font-medium text-gray-700">
               {field === 'confirmPassword' ? 'Confirm Password' : field.charAt(0).toUpperCase() + field.slice(1)}

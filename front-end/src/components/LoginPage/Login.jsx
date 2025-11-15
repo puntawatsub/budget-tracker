@@ -15,10 +15,10 @@ function Login() {
   };
 
   return (
-    <div className="bg-white px-10 py-20 rounded-3xl border-2 border-gray-200 ">
-      <div className="mt-8">
+    <div className="px-10 py-20 rounded-3xl border-2 border-gray-200 flex items-center justify-center min-h-screen">
+      <div className="mt-8 bg-white p-8 rounded-lg shadow-md w-full max-w-md">
 
-        <h2 className="text-5xl  font-semibold ">
+        <h2 className="text-5xl  font-semibold mb-6 text-center ">
           Log in
         </h2>
 
@@ -46,7 +46,7 @@ function Login() {
               required
               className="w-full border-2 border-gray-100 rounded-xl p-4 mt-10 bg-transparent "
             />
-            <div/>
+            </div>
 
             <div className="mt-8 flex">
             <Link
@@ -56,17 +56,18 @@ function Login() {
               Forgot password?
             </Link>
             </div>
-          </div>
+          
 
           {/* Login Button */}
           <div className="mt-8 flex flex-col gap-y-4">
           <button
             type="submit"
-            className="py-4 rounded-4xl bg-blue-1000 text-white font-bold py-4 rounded-xl hover:scale-105 transition-transform duration-300"
+            className="py-4 rounded-4xl bg-blue-600 text-white font-bold py-4 rounded-xl hover:scale-105 transition-transform duration-300"
           >
             Log in
           </button>
           </div>
+          
         </form>
 
         {/* Footer Link */}
