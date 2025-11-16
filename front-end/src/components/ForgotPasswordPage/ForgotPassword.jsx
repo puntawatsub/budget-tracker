@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState('');
@@ -8,37 +9,42 @@ const ForgotPassword = () => {
     // Trigger password reset logic here (e.g., API call)
     console.log('Password reset requested for:', email);
     alert('If this email is registered, a reset link has been sent.');
+    setEmail('');
   };
 
   return (
-    <div className=" px-10 py-20 rounded-3xl border-2 border-gray-200 flex items-center justify-center min-h-screen">
-      <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
-        <h2 className="text-2xl font-bold mb-6 text-center">Forgot Password</h2>
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <label className="block text-sm font-medium text-gray-700">
-            Email
+    <div className="px-10 py-20 rounded-3xl border-2 border-gray-200 flex items-center justify-center">
+      <div className="mt-8 bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+        <h2 className="text-5xl font-semibold mb-6 text-center">
+          Forgot Password
+        </h2>
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <div>
             <input
               type="email"
               name="email"
               placeholder="Enter your registered email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="mt-1 w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full border-2 border-gray-100 rounded-xl p-4 mt-10 bg-transparent focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
             />
-          </label>
-          <button
-            type="submit"
-            className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition duration-200"
-          >
-            Send Reset Link
-          </button>
+          </div>
+
+          <div className="mt-8 flex flex-col gap-y-4">
+            <button
+              type="submit"
+              className="w-full bg-blue-600 text-white py-4 rounded-md hover:bg-blue-700 transition duration-200 font-semibold"
+            >
+              Send Reset Link
+            </button>
+          </div>
         </form>
         <p className="mt-4 text-center text-sm text-gray-600">
           Remembered your password?{' '}
-          <a href="/login" className="text-blue-600 hover:underline">
+          <Link to="/login" className="text-blue-600 hover:underline">
             Sign in
-          </a>
+          </Link>
         </p>
       </div>
     </div>

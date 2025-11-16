@@ -15,7 +15,7 @@ function Login() {
   };
 
   return (
-    <div className="px-10 py-20 rounded-3xl border-2 border-gray-200 flex items-center justify-center min-h-screen">
+    <div className="px-10 py-20 rounded-3xl border-2 border-gray-200 flex items-center justify-center ">
       <div className="mt-8 bg-white p-8 rounded-lg shadow-md w-full max-w-md">
 
         <h2 className="text-5xl  font-semibold mb-6 text-center ">
@@ -26,7 +26,7 @@ function Login() {
           {/* Email */}
           <div>
             <input
-              className="w-full border-2 border-gray-100 rounded-xl p-4 mt-10 bg-transparent"
+              className="w-full border-2 border-gray-100 rounded-xl p-4 bg-transparent focus:outline-none focus:ring-2 focus:ring-blue-500"
               type="email"
               placeholder="Enter your email"
               value={email}
@@ -36,33 +36,31 @@ function Login() {
             />
           </div>
 
-          {/* Password with link */}
-          <div className="relative">
+          {/* Password with Forgot Password Link */}
+          <div>
+            <div className="flex justify-end mb-2">
+              <Link
+                to="/forgot-password"
+                className="text-sm text-blue-600 hover:underline"
+              >
+                Forgot password?
+              </Link>
+            </div>
             <input
               type="password"
-              placeholder="Password"
+              placeholder="Enter your password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
-              className="w-full border-2 border-gray-100 rounded-xl p-4 mt-10 bg-transparent "
+              className="w-full border-2 border-gray-100 rounded-xl p-4 bg-transparent focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
-            </div>
-
-            <div className="mt-8 flex">
-            <Link
-              to="/forgot-password"
-              className="mt-8 flex iems-center"
-            >
-              Forgot password?
-            </Link>
-            </div>
-          
+          </div>
 
           {/* Login Button */}
           <div className="mt-8 flex flex-col gap-y-4">
           <button
             type="submit"
-            className="py-4 rounded-4xl bg-blue-600 text-white font-bold py-4 rounded-xl hover:scale-105 transition-transform duration-300"
+            className="w-full bg-blue-600 text-white py-4 rounded-md hover:bg-blue-700 transition duration-200 font-semibold"
           >
             Log in
           </button>
@@ -71,9 +69,9 @@ function Login() {
         </form>
 
         {/* Footer Link */}
-        <p className="text-center text-xs mt-6 text-gray-600">
+        <p className="mt-4 text-center text-sm mt-6 text-gray-600">
           No account? Create a new account{" "}
-          <Link to="/signup" className="text-blue-500 hover:underline">
+          <Link to="/signup" className="text-blue-600 hover:underline">
             here
           </Link>
         </p>
