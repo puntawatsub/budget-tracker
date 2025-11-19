@@ -8,57 +8,47 @@ const Login = () => {
     email: '',
     password: '',
   })
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(null)
 
-  // const handleChange = (e) => {
-  //   setFormData({ ...formData, [e.target.name]: e.target.value })
-  // }
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault()
-  //   console.log('Form submitted:', formData)
-
-  //   // Reset form
-  //   setFormData({
-  //     email: '',
-  //     password: '',
-  //   })
-
-  //   navigate('/dashboard') //redirect
-  // }
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value })
+  }
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    setError("");
+    e.preventDefault()
+    setLoading(true)
+    setError(null)
 
     try {
-      const response = await fetch("http://localhost:3000/api/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, password }),
-      });
+      const response = await fetch('http://localhost:3000/api/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      })
 
-      const data = await response.json();
-
-      if (response.ok) {
-        // Example: if backend returns a token
-        localStorage.setItem("token", data.token); // store token if needed
-        navigate("/dashboard"); // redirect to dashboard
-      } else {
-        // If login fails
-        setError(data.message || "Login failed");
+      if (!response.ok) {
+        throw new Error('Invalid email or password')
       }
+
+      const data = await response.json()
+      console.log('Login success:', data)
+
+      // Example: store token (better to use httpOnly cookies in backend)
+      localStorage.setItem('token', data.token)
+
+      // Reset form
+      setFormData({ email: '', password: '' })
+
+      // Redirect
+      navigate('/dashboard')
     } catch (err) {
-      console.error("Login error:", err);
-      setError("Something went wrong. Please try again.");
+      console.error(err)
+      setError(err.message)
     } finally {
-      setLoading(false);
-      setEmail("");
-      setPassword("");
+      setLoading(false)
     }
-  };
+  }
 
   return (
     <div className='flex flex-row h-full overflow-hidden'>
@@ -126,11 +116,18 @@ const Login = () => {
               />
             </div>
 
+            {error && (
+              <p className='text-red-600 text-sm mb-4'>{error}</p>
+            )}
+
             <div className='mt-14 flex flex-col'>
               <button
                 type='submit'
-                className='w-full bg-blue-600 text-white py-2.75 rounded-md hover:bg-blue-700 transition duration-200 font-semibold'>
-                Log In
+                disabled={loading}
+                className={`w-full bg-blue-600 text-white py-2.75 rounded-md transition duration-200 font-semibold ${
+                  loading ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-700'
+                }`}>
+                {loading ? 'Logging in...' : 'Log In'}
               </button>
             </div>
           </form>
