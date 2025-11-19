@@ -1,4 +1,4 @@
-//  LoginModel
+//  SignupModel
 //  {
 //     "username" : "abc"
 //     "email": "abc@gmail.com",
@@ -18,7 +18,6 @@ const signupSchema = new mongoose.Schema({
     type: String, 
     required: true,  
     unique: true,      // Prevent duplicate emails
-    lowercase: true,
   },
 
   password: {
