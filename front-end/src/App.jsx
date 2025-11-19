@@ -5,6 +5,7 @@ import Home from "./Home";
 import SignUp from "./pages/SignUpPage/SignUp";
 import Login from "./pages/LoginPage/Login";
 import ForgotPassword from "./pages/ForgotPasswordPage/ForgotPassword";
+import Dashboard from "./pages/DashboardPage/Dashboard";
 import "./index.css";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
             <Route path="login" element={<Login />} />
             <Route path="forgot-password" element={<ForgotPassword />} />
             <Route path="reset-password" element={<ResetPassword />} />
+            <Route path="dashboard" element={<Dashboard />} />
           </Route>
         </Routes>
       </BrowserRouter>

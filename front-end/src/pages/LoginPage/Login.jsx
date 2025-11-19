@@ -9,22 +9,56 @@ const Login = () => {
     password: '',
   })
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value })
-  }
+  // const handleChange = (e) => {
+  //   setFormData({ ...formData, [e.target.name]: e.target.value })
+  // }
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    console.log('Form submitted:', formData)
+  // const handleSubmit = (e) => {
+  //   e.preventDefault()
+  //   console.log('Form submitted:', formData)
 
-    // Reset form
-    setFormData({
-      email: '',
-      password: '',
-    })
+  //   // Reset form
+  //   setFormData({
+  //     email: '',
+  //     password: '',
+  //   })
 
-    navigate('/dashboard') //redirect
-  }
+  //   navigate('/dashboard') //redirect
+  // }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setError("");
+
+    try {
+      const response = await fetch("http://localhost:3000/api/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        // Example: if backend returns a token
+        localStorage.setItem("token", data.token); // store token if needed
+        navigate("/dashboard"); // redirect to dashboard
+      } else {
+        // If login fails
+        setError(data.message || "Login failed");
+      }
+    } catch (err) {
+      console.error("Login error:", err);
+      setError("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+      setEmail("");
+      setPassword("");
+    }
+  };
 
   return (
     <div className='flex flex-row h-full overflow-hidden'>
