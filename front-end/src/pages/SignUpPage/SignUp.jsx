@@ -16,20 +16,20 @@ const SignUp = () => {
   }
 
   // const handleSubmit = (e) => {
-  //   e.preventDefault()
+  //   e.preventDefault();
   //   if (formData.password !== formData.confirmPassword) {
-  //     alert('Passwords do not match')
-  //     return
+  //     alert("Passwords do not match");
+  //     return;
   //   }
-  //   console.log('Form submitted:', formData)
+  //   console.log("Form submitted:", formData);
   //   setFormData({
-  //     username: '',
-  //     email: '',
-  //     password: '',
-  //     confirmPassword: '',
-  //   })
-  //   navigate('/login') // optional redirect
-  // }
+  //     username: "",
+  //     email: "",
+  //     password: "",
+  //     confirmPassword: "",
+  //   });
+  //   navigate("/login"); // optional redirect
+  // };
 
   const handleSubmit = async (e) => {
   e.preventDefault();
