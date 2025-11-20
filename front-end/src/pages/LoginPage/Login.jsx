@@ -79,7 +79,7 @@ const Login = () => {
         </div>
       </div>
 
-      <div className="px-10 flex-2 py-20 flex items-center justify-center z-10 flex-col overflow-y-auto">
+      <div className="px-10 flex-2 py-20 flex items-center sm:justify-center z-10 flex-col overflow-y-auto">
         <div className="xl:hidden max-sm:hidden">
           <div className="text-black text-3xl italic font-bold font-['Inter']">
             Your Money Your Rules
