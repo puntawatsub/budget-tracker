@@ -23,22 +23,25 @@ const Login = () => {
   setLoading(true);
   setError("");
 
+  const { email, password } = formData;
+
   try {
     const response = await fetch("http://localhost:3000/api/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        email: formData.email,
-        password: formData.password,
-      }),
+      body: JSON.stringify({ email, password }),
     });
 
     const data = await response.json();
 
     if (response.ok) {
-      localStorage.setItem("token", data.token);
-      navigate("/dashboard");
+      localStorage.setItem("token", data.token); // save token
+      navigate("/dashboard"); // redirect to dashboard
+    } else if (response.status === 404) {
+      // if user does not exist
+      alert("User does not exist. Please sign up first.");
     } else {
+      // Wrong password or other errors
       setError(data.message || "Login failed");
     }
   } catch (err) {
@@ -46,8 +49,10 @@ const Login = () => {
     setError("Something went wrong. Please try again.");
   } finally {
     setLoading(false);
+    setFormData({ email: "", password: "" });
   }
 };
+
   
   
 
