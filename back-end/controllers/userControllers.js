@@ -16,9 +16,9 @@ const getAllUsers = async (req, res) => {
 const createUser = async (req, res) => {
   const { username, email, password, confirmPassword } = req.body;
 
-  // To ensure all fields are written
-  if (!username || !email || !password || !confirmPassword) {
-    return res.status(400).json({ message: "All fields are required" });
+  
+  if (!username ) {
+    return res.status(400).json({ message: "User name required" });
   }
 
   // Check password match
