@@ -79,12 +79,16 @@ To reflect on what went well, what didn’t, and what can be improved for the ne
 
 ## Team Contributions (Sprint 2)
 
-| Member                 | Role                                      | Key Contributions                                                                                                                                             |
-| ---------------------- | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Swostika Lama**      | Product Owner/Development Team            | Design product backlogs and assign its priority, written basic layout for Login, Sign up, and Reset password pages. Written backend code for user management. |
-| **Puntawat Subhamani** | Scrum Master/UI Designer/Development Team | Designed Dashboard, User registration, and Transaction pages. Written the UI for Sign up page and AI related backend code                                     |
-| **Chandina Nilukshi**  | UI Designer/Development Team              | Designed the UI for Goal page, written front-end for Forget password and Reset password pages                                                                 |
-| **Jiya Jameela**       | UI Designer/Development Team              | Designed the UI for Transaction page, Category and New Transaction popups, and the landing page. Written the UI for Login page.                               |
+| Member                 | Role                                      | Key Contributions                                                                                                                                                                                |
+| ---------------------- | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Swostika Lama**      | Product Owner/Development Team            | Designed product backlogs and assigned its priority, built layout for authentication pages and and developed secure user management backend, integrated frontend with backend for seamless flow. |
+|                        |
+| **Puntawat Subhamani** | Scrum Master/UI Designer/Development Team | Designed product backlogs and assign its priority, enhanced UI Sign up, page. Developed backend code for AI functionality .                                                                      |
+|                        |
+| **Chandina Nilukshi**  | UI Designer/Development Team              | Designed the UI for Goal page, written front-end for Reset password pages and enhanced UI for this pages.                                                                                        |
+|                        |
+| **Jiya Jameela**       | UI Designer/Development Team              | Designed the UI for Transaction page, Category and New Transaction popups, and the landing page. Wrote the UI for Login page.                                                                    |
+|                        |
 
 ## Sprint 1 Outcome
 
