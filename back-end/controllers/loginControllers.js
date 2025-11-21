@@ -9,7 +9,7 @@ const loginUser = async (req, res) => {
     // 1. Find user
     const user = await Signup.findOne({ email });
     if (!user) {
-      return res.status(404).json({ message: "User does not exist" });
+      return res.status(400).json({ message: "Invalid email or password" });
     }
 
     // 2. Compare password
