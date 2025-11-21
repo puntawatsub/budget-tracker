@@ -79,7 +79,7 @@ To reflect on what went well, what didn’t, and what can be improved for the ne
 - **Longed For:**
   Earlier start on dashboard implementation to align faster with the prototype. <br>
   More detailed task breakdowns with clear ownership to avoid overlaps. <br>
-  Additional mid‑sprint reviews to catch delays before they accumulate. you can do some edits
+  Additional mid‑sprint reviews to catch delays before they accumulate.
 
 ## Team Contributions (Sprint 2)
 
